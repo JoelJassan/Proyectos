@@ -7,13 +7,7 @@ i. Usando promedios temporales, calcule los valores eficaces de cada señal, y
 de la suma y de la diferencia de cada una.  
 ii. Compare los resultados usando la función desviación estándar (std). b. 
 Averigüe si las 2 señales del ítem a son coherentes o no.  
- 
-c. Defina los vectores necesarios para representar alrededor de 100 ciclos de 2 señales 
-senoidales de amplitud unitaria, de la misma frecuencia, pero distinta fase.  
-i. Explore cómo cambia la coherencia entre las 2 señales al ir cambiando la fase 
-de una de ellas entre 0 y 90 grados.  
-
- '''
+'''
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -21,8 +15,6 @@ from math import pi
 
 print("\n ----- EJERCICIO 4.a. --------------------------------------------------------- \n")
 
-
-#vector de muestras cada 1/8*pi, hasta 100 ciclos
 ciclos = 100
 
 #amplitudes
@@ -31,9 +23,9 @@ amp2 = 4
 #frecuencias
 f1 = 20
 f2 = 33.57
-f_sampling = f2*20 #asociado al peor caso
 
 #muestreo
+f_sampling = f2*20 #asociado al peor caso
 T_sampling = 1/f_sampling
 sampling_time = np.arange(0, ciclos/f1, T_sampling) #sampleo 100 ciclos de la menor frec.
 
@@ -148,4 +140,3 @@ print("Desvío estándar señal 1: ", std_signal_1)
 print("Desvío estándar señal 2: ", std_signal_2)
 print("Desvío estándar suma: ", std_sum)
 print("Desvío estándar resta: ", std_diff)
-
