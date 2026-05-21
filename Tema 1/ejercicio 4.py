@@ -127,8 +127,25 @@ print("Vrms_sum = ", round(Vrms_sum,2))
 Vrms_diff = np.sqrt(1/(n*delta_t) * suma_signal_diff_promedio)
 print("Vrms_diff = ", round(Vrms_diff,2))
 
+'''
+El ejercicio buscaba lo siguiente:
+Vrms1 = amp1/np.sqrt(2)
+Vrms2 = amp2/np.sqrt(2)
 
-print("\n ----- EJERCICIO 4.a.ii: Comparación con std --------------------------- \n")
+Vef_suma = np.sqrt(Vrms1**2 + Vrms2**2)
+Vef_resta = np.sqrt(Vrms1**2 + Vrms2**2)
+'''
 
+print("\n ----- EJERCICIO 4.a.ii: Comparación con std ---------------------------------- \n")
+#Señal estacionaria y ergódica: los promedios temporales y estadísticos son iguales
+print("\nDesvíos estandar:")
+std_signal_1 = np.std(signal_1)
+std_signal_2 = np.std(signal_2)
+std_sum = np.std(signal_sum)
+std_diff = np.std(signal_diff)
 
+print("Desvío estándar señal 1: ", std_signal_1)
+print("Desvío estándar señal 2: ", std_signal_2)
+print("Desvío estándar suma: ", std_sum)
+print("Desvío estándar resta: ", std_diff)
 
