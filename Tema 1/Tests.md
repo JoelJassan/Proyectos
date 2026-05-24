@@ -83,9 +83,8 @@ f_sampling = max(f1,f2)*100
 
 Señales CON ruido de 5% de amplitud
 ```
-![Señales en t](<../pics/5. f1=1, f2=2, fs=x50, ø1=ø2, noise=0.05 signals.png>)
 
-![Coherencia](<../pics/5. f1=1, f2=2, fs=x50, ø1=ø2, noise=0.05 coherence.png>)
+![Graficas](<../pics/prueba5.png>)
 
 Señales sin coherencia.
 
