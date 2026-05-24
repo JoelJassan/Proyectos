@@ -46,14 +46,16 @@ signal_1 = signal_1 + ruido_1
 signal_2 = signal_2 + ruido_2
 #'''
 
+fig, ax = plt.subplots(1, 2)
+
 #visualización de señales
-plt.plot(sampling_time, signal_1, label='Signal 1')
-plt.plot(sampling_time, signal_2, label='Signal 2')
-plt.xlabel("Tiempo [s]")
-plt.ylabel("Amplitud [V]")
-plt.legend()
-#plt.grid()
-plt.show()
+ax[0].plot(sampling_time, signal_1, label='Signal 1')
+ax[0].plot(sampling_time, signal_2, label='Signal 2')
+
+ax[0].set_xlabel("Tiempo [s]")
+ax[0].set_ylabel("Amplitud [V]")
+ax[0].legend()
+ax[0].set_title("Señales en t")
 
 
 print("\n ----- EJERCICIO 4.c.i.: coherencia de señales -------------------------------- \n")
@@ -64,10 +66,13 @@ from scipy.signal import coherence
 
 f_coherence, Cxy = coherence(signal_1, signal_2, f_sampling, nperseg=128)
 
-plt.plot(f_coherence, Cxy, label='Coherencia')
-plt.ylim(-0.1, 1.1)  # Obliga al eje Y a mostrar de 0 a 1 en lugar del micro-zoom
+ax[1].plot(f_coherence, Cxy, label='Coherencia')
 
-plt.xlabel("Frecuencia [Hz]")
-plt.ylabel("Coherencia")
-plt.legend()
+ax[1].set_ylim(-0.1, 1.1)  # Obliga al eje Y a mostrar de 0 a 1 en lugar del micro-zoom
+ax[1].set_xlabel("Frecuencia [Hz]")
+ax[1].set_ylabel("Coherencia")
+ax[1].legend()
+ax[1].set_title("Coherencia entre señales")
+
+plt.tight_layout()
 plt.show()
